@@ -20,7 +20,14 @@ cd mmrazor
 ```shell
 pip install -v -e .
 ```
-
+### Install Wavelets
+```shell
+git clone https://github.com/fbcotter/pytorch_wavelets
+cd pytorch_wavelets
+```
+```shell
+pip install .
+```
 ### Prepare Data Set
 
 Download on [https://opendatalab.com](https://opendatalab.com)
@@ -38,13 +45,13 @@ This repo uses [MMRazor](https://github.com/open-mmlab/mmrazor) as the knowledge
 
 ```shell
 cd mmrazor
-sh tools/mmdet/dist_train_mmdet.sh ${CONFIG} 8 ${WORK_DIR}
+sh tools/mmdet/dist_train.sh ${CONFIG} 8 ${WORK_DIR}
 ```
 
-Example for reproducing our `reppoints_x101-reppoints-r50_coco` result:
+Example for reproducing our `freekd_retinanet_r101-retinanet_r50_coco` result:
 
 ```shell
-sh tools/mmdet/dist_train_mmdet.sh freekd_reppoints_x101-reppoints-r50_coco.py 8 work_dirs/freekd_rep_x101-fpn_x50
+bash tools/mmdet/dist_train.sh configs/distill/freekd/freekd_retinanet_r101-retinanet_r50_coco.py 8 --work-dir work_dirs/freekd_retinanet_r101-retinanet_r50
 ```
 
 
